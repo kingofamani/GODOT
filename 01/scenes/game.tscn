@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwqq2r5yvkw15"]
+[gd_scene load_steps=16 format=3 uid="uid://dwqq2r5yvkw15"]
 
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_1bj3t"]
 [ext_resource type="PackedScene" uid="uid://ggk2x8gbfq0q" path="res://scenes/player.tscn" id="1_i6dui"]
+[ext_resource type="FontFile" uid="uid://dd85wpyh15l7c" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8i1js"]
 [ext_resource type="Texture2D" uid="uid://ct8cfab4ocbd5" path="res://assets/sprites/world_tileset.png" id="2_d77lp"]
 [ext_resource type="PackedScene" uid="uid://bg5qg8i6sgdv5" path="res://scenes/platform.tscn" id="3_xnlb6"]
 [ext_resource type="PackedScene" uid="uid://cs82mxu3qdtin" path="res://scenes/coin.tscn" id="4_wdfow"]
@@ -451,6 +453,22 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_1bj3t")
+
+[node name="LblScore" type="Label" parent="GameManager"]
+offset_left = 213.0
+offset_top = -67.0
+offset_right = 377.0
+offset_bottom = -26.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("2_8i1js")
+theme_override_font_sizes/font_size = 32
+text = "Coin..."
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_st4wa")
 format = 2
@@ -523,13 +541,3 @@ theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("7_s8uro")
 theme_override_font_sizes/font_size = 8
 text = "Space to Jump"
-
-[node name="Label2" type="Label" parent="Labels"]
-offset_left = 213.0
-offset_top = -67.0
-offset_right = 377.0
-offset_bottom = -26.0
-theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("7_s8uro")
-theme_override_font_sizes/font_size = 32
-text = "Coin..."
